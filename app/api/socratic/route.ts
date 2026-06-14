@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-export const runtime = "nodejs";
 
 export type Message = { role: "user" | "assistant" | "system"; content: string };
 
@@ -56,6 +55,36 @@ export const subjects: Record<string, SubjectConfig> = {
       "raw-count: student compares raw mole quantities instead of required mole ratios from the balanced equation",
     targetUnderstanding:
       "You must use the coefficients from the balanced equation to find the required ratio. Here 2:1 means 4 mol H₂ needs exactly 2 mol O₂, so O₂ is actually in excess and H₂ limits.",
+  },
+  biology: {
+    name: "Biology — Cell Osmosis",
+    problem:
+      "A red blood cell is placed in a saltwater solution. A student says: 'Water moves out of the cell because salt attracts water and pulls it across the membrane.' What is wrong with this explanation?",
+    concept: "Osmosis as passive diffusion of water down its own concentration gradient",
+    commonMisconception:
+      "solute-attraction: student believes solutes actively attract or pull water molecules rather than water moving by diffusion",
+    targetUnderstanding:
+      "Osmosis is the diffusion of water from high water concentration (low solute) to low water concentration (high solute) through a semipermeable membrane. Water moves passively down its own gradient — no attraction involved.",
+  },
+  mechanics: {
+    name: "Mechanics — Newton's Third Law",
+    problem:
+      "A truck collides with a small bug. A student claims the truck exerts a much larger force on the bug than the bug exerts on the truck, because the truck is heavier. Is this correct?",
+    concept: "Newton's Third Law — action-reaction pairs are always equal in magnitude",
+    commonMisconception:
+      "mass-determines-force: student believes the larger or heavier object exerts a greater interaction force",
+    targetUnderstanding:
+      "By Newton's Third Law, the bug exerts the same force on the truck as the truck exerts on the bug — equal in magnitude, opposite in direction. What differs is acceleration (a = F/m), not force.",
+  },
+  algebra: {
+    name: "Algebra — Quadratic Functions",
+    problem:
+      "For x² - 5x + 6 = 0, a student says the roots are x = 5 and x = 6 because they can 'read the numbers off' the equation. What is the misconception?",
+    concept: "Finding roots requires solving (factoring or quadratic formula), not reading coefficients",
+    commonMisconception:
+      "coefficient-reading: student treats the numerical coefficients as if they were the solutions directly",
+    targetUnderstanding:
+      "Roots are found by solving: x² - 5x + 6 = (x-2)(x-3) = 0, giving x = 2 and x = 3. The coefficients -5 and +6 are not the roots — they encode the sum and product of the roots respectively.",
   },
 };
 
@@ -123,6 +152,42 @@ const FALLBACK: Record<string, SocraticResponse> = {
       progress: 1,
       next_move: "probe_deeper",
       teacher_note: "Student skipped mole-ratio step; prompt to read the balanced equation coefficients.",
+    },
+    source: "fallback",
+  },
+  biology: {
+    reply:
+      "You say salt 'attracts' water. Does salt actually exert a physical force pulling water molecules — or might the water be moving for a different reason related to concentration?",
+    analysis: {
+      misconception: "solute-attraction",
+      confidence: 0.87,
+      progress: 1,
+      next_move: "probe_deeper",
+      teacher_note: "Student anthropomorphizes solute; redirect toward diffusion and concentration gradient.",
+    },
+    source: "fallback",
+  },
+  mechanics: {
+    reply:
+      "You say the truck pushes harder because it's bigger. Newton's Third Law says something specific about paired forces — do you remember what it says about their magnitudes?",
+    analysis: {
+      misconception: "mass-determines-force",
+      confidence: 0.91,
+      progress: 1,
+      next_move: "probe_deeper",
+      teacher_note: "Student conflates force with mass; redirect to Third Law statement.",
+    },
+    source: "fallback",
+  },
+  algebra: {
+    reply:
+      "You read x = 5 and x = 6 from the coefficients. Let's check: if x = 6 is a root, it must satisfy the equation. Does 6² - 5(6) + 6 equal zero?",
+    analysis: {
+      misconception: "coefficient-reading",
+      confidence: 0.93,
+      progress: 1,
+      next_move: "challenge_analogy",
+      teacher_note: "Student reads coefficients as roots; use substitution check to expose the error.",
     },
     source: "fallback",
   },
