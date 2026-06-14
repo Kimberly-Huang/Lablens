@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__visualize__read_me",
+      "mcp__visualize__show_widget",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(kill 73285)",
+      "Bash(npm --prefix /Users/kylinhwang/Documents/Codex/2026-06-13/https-dsh-hacks-v1-devpost-com run dev)",
+      "Bash(curl -s -X POST http://localhost:3000/api/socratic -H 'Content-Type: application/json' -d '{\"messages\":[{\"role\":\"user\",\"content\":\"I think the current gets smaller after R1 because electricity gets used up.\"}],\"subject\":\"circuits\"}')",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -s -X POST http://localhost:3000/api/socratic -H \"Content-Type: application/json\" -d '{\"messages\":[{\"role\":\"user\",\"content\":\"I think the current gets smaller after R1 because electricity gets used up.\"}],\"subject\":\"circuits\"}')",
+      "Bash(curl -s -X POST https://api.featherless.ai/v1/chat/completions -H 'Content-Type: application/json' -H 'Authorization: Bearer rc_340fbb0c2ff2a21287a6bdb4e2ee4b8a2a8a78801a863e93f7d3248ba98dddfe' -d '{\"model\":\"meta-llama/Llama-3.3-70B-Instruct\",\"messages\":[{\"role\":\"user\",\"content\":\"Say hello in one word.\"}],\"max_tokens\":20}')",
+      "Bash(curl -s https://api.featherless.ai/v1/models -H 'Authorization: Bearer rc_340fbb0c2ff2a21287a6bdb4e2ee4b8a2a8a78801a863e93f7d3248ba98dddfe')",
+      "Bash(python3 -c \"import json,sys; models=json.load\\(sys.stdin\\); [print\\(m['id']\\) for m in models.get\\('data',[]\\)]\")",
+      "Bash(tail -30 /tmp/lablens-dev.log)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
