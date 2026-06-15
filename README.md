@@ -6,7 +6,6 @@
 
 Students interact with live mini-labs, explain their thinking, and receive a targeted hint tied to the exact misconception detected — not a generic explanation. A follow-up check verifies whether the misconception was actually repaired, and a teacher-ready report summarizes the cognitive gap and next step.
 
-Built in 36 hours at **DSH Hacks V1** by a team of two.
 
 ---
 
@@ -136,7 +135,7 @@ If no API key is present, the app uses a deterministic fallback coach so the dem
 
 ## Team
 
-Two builders: Kimberly Huang, Kylin Hwang
+Two builders: Kimberly Huang
 
 ---
 
