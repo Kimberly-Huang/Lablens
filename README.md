@@ -133,10 +133,5 @@ If no API key is present, the app uses a deterministic fallback coach so the dem
 - **More subjects** — Biology (cell membrane transport), Statistics (p-value misinterpretation), Mechanics (Newton's Third Law symmetry).
 - **Classroom dashboard** — aggregate misconception heatmaps across a class cohort in real time.
 
-## Team
 
-Two builders: Kimberly Huang
 
----
-
-*The AI diagnoses. The student discovers. The teacher sees everything.*
