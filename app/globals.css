@@ -117,7 +117,7 @@ body {
   justify-content: center;
   text-align: center;
   padding: 80px 40px;
-  background: #0b1929;
+  background: #eef2f7;
   position: relative;
   overflow: hidden;
 }
@@ -128,14 +128,14 @@ body {
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
-  opacity: 0.45;
+  opacity: 0.35;
   pointer-events: none;
 }
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(11,25,41,0.3) 0%, rgba(11,25,41,0.6) 60%, rgba(11,25,41,0.95) 100%);
+  background: linear-gradient(to bottom, rgba(238,242,247,0.2) 0%, rgba(238,242,247,0.55) 60%, rgba(238,242,247,0.97) 100%);
 }
 .hero-inner { position: relative; max-width: 780px; z-index: 1; }
 .hero h1 {
@@ -143,19 +143,18 @@ body {
   font-size: clamp(52px, 8vw, 96px);
   font-weight: 700;
   line-height: 1.0;
-  color: #ffffff;
+  color: var(--ink);
   letter-spacing: -2px;
   margin-bottom: 28px;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.4);
 }
 .hero-sub {
   font-size: 18px;
-  color: rgba(255,255,255,0.75);
+  color: var(--ink-mid);
   max-width: 520px;
   margin: 0 auto 48px;
   line-height: 1.7;
 }
-.hero-sub strong { color: #ffffff; font-weight: 600; }
+.hero-sub strong { color: var(--ink); font-weight: 600; }
 
 /* Buttons */
 .btn-primary {
@@ -190,8 +189,6 @@ body {
   transition: border-color .15s, background .15s;
 }
 .btn-ghost:hover { border-color: var(--ink-muted); background: var(--cream-dark); }
-.hero .btn-ghost { color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.35); }
-.hero .btn-ghost:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
 .btn-ink {
   display: inline-flex;
   align-items: center;
@@ -212,12 +209,13 @@ body {
 .hero-powered {
   margin-top: 56px;
   font-size: 12px;
-  color: rgba(255,255,255,0.45);
+  color: var(--ink-muted);
   letter-spacing: 0.5px;
 }
-.hero-powered span { color: #5db89a; font-weight: 600; }
-.hero .eyebrow { color: rgba(255,255,255,0.55); }
-.hero .scroll-cue { color: rgba(255,255,255,0.45); }
+.hero-powered span { color: var(--accent); font-weight: 600; }
+.hero .eyebrow { color: var(--ink-muted); }
+.hero .btn-ghost { color: var(--ink); border-color: var(--border-dark); }
+.hero .btn-ghost:hover { border-color: var(--ink-muted); background: var(--cream-dark); }
 
 /* ── SCROLL CUE ── */
 .scroll-cue {
@@ -247,8 +245,7 @@ body {
 .how {
   border-top: 1px solid var(--border);
   padding: 88px 40px;
-  background: var(--ink);
-  color: white;
+  background: var(--cream);
 }
 .how-inner { max-width: var(--max); margin: 0 auto; }
 .how h2 {
@@ -257,7 +254,7 @@ body {
   font-weight: 700;
   margin-bottom: 56px;
   letter-spacing: -0.5px;
-  color: white;
+  color: var(--ink);
 }
 .how-grid {
   display: grid;
@@ -268,7 +265,7 @@ body {
   font-family: var(--serif);
   font-size: 48px;
   font-weight: 700;
-  color: rgba(255,255,255,0.12);
+  color: var(--accent-pale);
   line-height: 1;
   margin-bottom: 16px;
 }
@@ -277,15 +274,15 @@ body {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: white;
+  color: var(--ink);
 }
-.how-step p { color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.7; }
+.how-step p { color: var(--ink-mid); font-size: 14px; line-height: 1.7; }
 
 /* ── SUBJECTS PREVIEW (landing) ── */
 .subjects-preview {
   padding: 88px 40px;
-  background: var(--gold-pale);
-  border-top: 1px solid #e8d8a0;
+  background: var(--cream-dark);
+  border-top: 1px solid var(--border);
 }
 .subjects-preview-inner {
   max-width: var(--max);
